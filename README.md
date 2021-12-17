@@ -1,2 +1,3 @@
-# yukkuri_voice
+# ゆっくりボイスメイカー
+
 AquesTalk10で音声合成するWebアプリのサンプル的なもの

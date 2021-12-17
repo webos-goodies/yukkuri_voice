@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>ゆっくりボイスメイカー</title>
+    <style>
+      a { color:#15c; text-decoration:none; }
+      a:hover { text-decoration:underline; }
+      .evaluation {
+        margin: 0 16px 2em; padding: 8px 16px; background-color: #eee; border-radius: 8px;
+        font-size: 12px; color: #444;
+      }
+      main { margin:0; padding:0; width:100%; max-width:500px; }
+      form { margin:0; padding:0; }
+      .voices label { display:inline-block; width:80px; }
+      .presets { margin:2em 0 1em; }
+      .parameters label { display:block; margin:0 0 1em; }
+      input[type=range] { width:200px; }
+      textarea { box-sizing: border-box; width:100%; }
+      .play {
+        display:block; margin:1em auto 0; padding:0; width:90%; max-width:300px;
+        border:solid 1px #ccc; border-radius:25px; background-color:white;
+        color:#15c; font-size:24px; font-weight:bold; line-height:48px;
+      }
+      .download { text-align:center; margin:2em 0 0; }
+      .license { text-align:right; margin:4em 0 0; }
+      .license a { color: #888; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ゆっくりボイスメイカー</h1>
+    </header>
+    <main>
+      <form class="voices">
+        <label><input type="radio" name="voice" value="1">設定1</label>
+        <label><input type="radio" name="voice" value="2">設定2</label>
+        <label><input type="radio" name="voice" value="3">設定3</label>
+        <label><input type="radio" name="voice" value="4">設定4</label>
+        <label><input type="radio" name="voice" value="5">設定5</label>
+        <label><input type="radio" name="voice" value="6">設定6</label>
+        <label><input type="radio" name="voice" value="7">設定7</label>
+        <label><input type="radio" name="voice" value="8">設定8</label>
+        <label><input type="radio" name="voice" value="9">設定9</label>
+        <label><input type="radio" name="voice" value="10">設定10</label>
+      </form>
+      <div class="presets">
+        <button value="F1">女声1</button>
+        <button value="F2">女声2</button>
+        <button value="F3">女声3</button>
+        <button value="M1">男声1</button>
+        <button value="M2">男声2</button>
+        <button value="R1">ロボット1</button>
+        <button value="R2">ロボット2</button>
+      </div>
+      <form class="parameters">
+        <label>
+          <span>
+            <select name="bas">
+              <option value="0">声質: 女声1</option>
+              <option value="1">声質: 女声2</option>
+              <option value="2">声質: 男声</option>
+            </select>
+          </span>
+        </label>
+        <label>
+          <input type="range" name="spd" min="50" max="300" value="100">
+          <span>速さ</span><span></span>
+        </label>
+        <label>
+          <input type="range" name="vol" min="0" max="300" value="100">
+          <span>音量</span>
+          <span></span>
+        </label>
+        <label>
+          <input type="range" name="pit" min="20" max="200" value="100">
+          <span>高さ</span>
+          <span></span>
+        </label>
+        <label>
+          <input type="range" name="acc" min="0" max="200" value="100">
+          <span>アクセント</span><span></span></label>
+        </label>
+        <label>
+          <input type="range" name="lmd" min="0" max="200" value="100">
+          <span>音程1</span><span></span>
+        </label>
+        <label>
+          <input type="range" name="fsc" min="50" max="200" value="100">
+          <span>音程2</span><span></span>
+        </label>
+        <div>
+          <textarea name="text" placeholder="しゃべらせる文章を入力" rows="5"></textarea>
+        </div>
+        <label>
+          <input type="checkbox" name="native" value="1">
+          <span>音声記号列で指定する（<a href="https://www.a-quest.com/archive/manual/siyo_onseikigou.pdf" target="_blank">仕様</a>）</span>
+        </label>
+        <button type="submit" class="play">再生</button>
+      </form>
+
+      <div class="download">
+        <a href="#">ファイルをダウンロード</a>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
