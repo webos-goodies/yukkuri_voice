@@ -11,7 +11,8 @@ from urllib.parse import parse_qs
 
 APP_DIR      = Path(__file__).parent.resolve()
 DOCUMENT_DIR = APP_DIR / 'root'
-DIC_DIR      = APP_DIR / 'downloads/aqk2k_mac/aq_dic_large'
+DIC_DIR      = (list(APP_DIR.glob('**/aq_dic_large')) +
+                list(APP_DIR.glob('**/aq_dic')))[0]
 CONFIG_PATH  = APP_DIR / 'config.json'
 SYNTHE_ARGS  = { 'type', 'bas', 'spd', 'vol', 'pit', 'acc', 'lmd', 'fsc' }
 
